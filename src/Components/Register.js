@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import {api} from "../urlConfig"
 // import { ToastContainer, toast } from 'react-toastify';
 import "../Components/mix.css";
 
@@ -84,7 +85,7 @@ const Register = () => {
             // console.log("user registration succesfully done");
 
 
-            const data = await fetch("/register", {
+            const data = await fetch(`${api}/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

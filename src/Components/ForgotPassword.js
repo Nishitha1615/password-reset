@@ -1,4 +1,5 @@
 import React from 'react'
+import {api} from "../urlConfig"
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams, NavLink } from 'react-router-dom';
 const ForgotPassword = () => {
@@ -9,7 +10,7 @@ const ForgotPassword = () => {
     const [password, setPassword] = useState("");
 
     const userValid = async () => {
-        const res = await fetch(`/forgotpassword/${id}/${token}`, {
+        const res = await fetch(`${api}/forgotpassword/${id}/${token}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -42,7 +43,7 @@ const ForgotPassword = () => {
         //         position: "top-center"
         //     });
         // } else {
-            const res = await fetch(`/${id}/${token}`, {
+            const res = await fetch(`${api}/${id}/${token}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -1,5 +1,5 @@
 import React , { useState } from 'react'
-
+import {api} from "../urlConfig"
 const PasswordReset = () => {
     const [email,setEmail]=useState("");
     const [message, setMessage] = useState("");
@@ -24,7 +24,7 @@ const PasswordReset = () => {
             // });
             alert("includes @ in your email!")
         } else {
-            const res = await fetch("/sendpasswordlink", {
+            const res = await fetch(`${api}/sendpasswordlink`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
