@@ -1,1 +1,1 @@
-export const api='http://localhost:7000';
+export const api='https://password-reset-backend-uukz.onrender.com';
